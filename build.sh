@@ -1,7 +1,15 @@
 #!/bin/bash
 
-echo 'start building centos...'
-./centos/build.sh
+echo '+-----------------------+
+| Start building CentOS |
++-----------------------+'
 
-echo 'start building sakura...'
-./sakura/build.sh
+cd centos && ./build.sh && cd ..
+
+# I'm proud to be a divider...
+
+echo '+-----------------------+
+| Start building Sakura |
++-----------------------+'
+
+cd sakura && ./build.sh && cd ..

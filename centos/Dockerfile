@@ -5,5 +5,6 @@ add https://lug.ustc.edu.cn/wiki/_export/code/mirrors/help/centos?codeblock=3 /e
 run yum install -y epel-release
 add *.repo /etc/yum.repos.d/
 
-run yum makecache
+# If apply the cache the image would be too large...
+# run yum makecache
 run yum -y install iproute
