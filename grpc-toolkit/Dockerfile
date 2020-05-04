@@ -1,10 +1,12 @@
 FROM golang:1.14-buster as build
 ENV GOPROXY=https://goproxy.cn
 RUN go get -u github.com/golang/protobuf/protoc-gen-go
+RUN go get -u github.com/longkai/istio-tools/grpc-transcoder
 
-WORKDIR /opt
-RUN git clone -b go-module https://github.com/longkai/istio-tools
-RUN cd istio-tools/grpc-transcoder && go install
+
+#WORKDIR /opt
+#RUN git clone -b go-module https://github.com/longkai/istio-tools
+#RUN cd istio-tools/grpc-transcoder && go install
 
 FROM ubuntu
 ARG VERSION=3.11.4
