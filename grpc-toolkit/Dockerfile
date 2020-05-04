@@ -1,7 +1,8 @@
 FROM golang:1.14-buster as build
 ENV GOPROXY=https://goproxy.cn
-RUN go get -u github.com/golang/protobuf/protoc-gen-go
-RUN go get -u github.com/longkai/istio-tools/grpc-transcoder
+ENV GO111MODULE=on
+RUN go get github.com/golang/protobuf/protoc-gen-go@v1.4.1
+RUN go get github.com/longkai/istio-tools/grpc-transcoder
 
 
 #WORKDIR /opt
